@@ -57,7 +57,7 @@ class LoginController extends Controller
 
         if($this->auth->attempt($credentials, $request->has('remember')))
         {
-            return view('home');
+            return redirect('home');
         }
 
         return view()->with('error','Credenciales Invalidas');
