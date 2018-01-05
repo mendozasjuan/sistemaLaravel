@@ -36,3 +36,6 @@ Route::get('home','HomeController@index');
 //Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('form_nuevo_usuario', 'FormulariosController@form_nuevo_usuario');
+Route::post('agregar_nuevo_usuario', 'UsuariosController@agregar_nuevo_usuario');
