@@ -49,3 +49,20 @@ function cargarformulario(arg){
 
 
 })
+
+function cargarlistado(listado){
+    if(listado==1){ var url = "listado_usuarios"; }
+    $("#contenido_principal").html($("#cargador_empresa").html());  
+    $.get(url,function(resul){
+        $("#contenido_principal").html(resul); 
+    })
+}
+
+$(document).on("click",".pagination li a",function(e){
+    e.preventDefault();
+    var url =$( this).attr("href");
+    $("#contenido_principal").html($("#cargador_empresa").html());
+    $.get(url,function(resul){
+        $("#contenido_principal").html(resul); 
+    })
+  })
